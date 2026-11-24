@@ -1,0 +1,43 @@
+public class MobilePhone
+{
+  public int capacity = 0;
+  public int count = 0;
+  public void setContactCapacity(int capacity)
+  {
+    this.capacity = capacity;
+  }
+  public String[] name = new String[this.capacity];
+  public int[] number = new int[this.capacity];
+  public void details()
+  {
+    System.out.println("Total Contacts: "+count);
+    System.out.println("Contacts List: ");
+    for(int i=0; i<count; i++)
+    {
+      for(int j=0; j<count; j++)
+      {
+        System.out.println(this.name[i]+" : "+this.number[i]);
+      }
+    }
+  }
+  public void addContact(String name, int number)
+  {
+    this.name[count]=name;
+    this.number[count]=number;
+    count++;
+  }
+  public void makeCall(int number)
+  {
+    for(int i=0; i<this.number.length; i++)
+    {
+      if(this.number[i] == number)
+      {
+        System.out.println("Calling +"this.name[i]+"...");
+      }
+      else
+      {
+        System.out.println("Calling +"number+"...");
+      }
+    }
+  }
+}

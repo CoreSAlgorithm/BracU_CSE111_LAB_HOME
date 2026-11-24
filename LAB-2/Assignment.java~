@@ -1,0 +1,12 @@
+public class Assignment
+{
+  public int task = 0;
+  public String = null;
+  public submission = false;
+  public void printDetails()
+  {
+    System.out.println("Number of tasks: "+task);
+    System.out.println("Difficulty level: "+difficulty);
+    System.out.println("Submission required: "+submission);
+  }
+}
