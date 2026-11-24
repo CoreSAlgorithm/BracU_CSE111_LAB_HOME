@@ -1,0 +1,146 @@
+=================TASK-1==================
+
+public class Cow extends Animal
+{
+  public Cow()
+  {
+    System.out.println("The cow says hello!");
+  }
+  public String name = "";
+  public void updateSound(String sound)
+  {
+    super.sound = sound;
+  }
+  public String getName()
+  {
+    return name;
+  }
+}
+
+==================TASK-2===================
+
+public class CheckingAccount extends Account
+{
+  public static double count = 0;
+  public CheckingAccount()
+  {
+    super(0);
+  }
+  public CheckingAccount(double balance)
+  {
+    super(0);
+    super.balance = balance;
+    count += balance; 
+  }
+  public static double count()
+  {
+    return count;
+  }
+}
+
+=================TASK-3==================
+
+=====BOOK CLASS=====
+public class Book extends Product
+{
+  public String isbn = "";
+  public String publisher = "";
+  public Book(int id, String title, int price, String isbn, String publisher)
+  {
+    super(id,title,price);
+    this.isbn = isbn;
+    this.publisher = publisher;
+  }
+  public String printDetail()
+  {
+    return super.getIdTitlePrice()+"\n ISBN: "+isbn+" Publisher: "+publisher;
+  }
+}
+
+======CD CLASS=====
+public class CD extends Product
+{
+  public String band = "";
+  public String genre = "";
+  public int duration = 0;
+  public CD(int id, String title, int price, String band, int duration, String genre)
+  {
+    super(id,title,price);
+    this.band = band;
+    this.genre = genre;
+    this.duration = duration;
+  }
+  public String printDetail()
+  {
+    return super.getIdTitlePrice()+"\n Band: "+band+" Duration:"+duration
+      +"\n Genre: "+genre;
+  }
+}
+
+=====================TASK-4======================
+
+public class ComplexNumber extends RealNumber
+{
+  public double imaginaryvalue = 1.0;
+  public ComplexNumber()
+  {
+    super(1.0);
+  }
+  public ComplexNumber(double realValue, double imaginaryvalue)
+  {
+    super(realValue);
+    this.imaginaryvalue = imaginaryvalue;
+  }
+  public String details()
+  {
+    return getReal()+"\nImaginaryPart: "+imaginaryvalue;
+  }
+}
+
+====================TASK-5=====================
+
+public class CSEStudent extends Student
+{
+  public String[] course = new String[4];
+  public int count = 0; 
+  public static int total = 0;
+  public CSEStudent(String name, int id)
+  {
+    super(name, id);
+    this.total++;
+  }
+  public void info()
+  {
+    if(count > 0)
+    {
+      super.info();
+      for(int i=0; i<count; i++)
+      {
+        System.out.print(course[i]+" ");
+      }
+      System.out.print("\n");
+    }
+    else
+    {
+      super.info();
+    }
+  }
+  public void addLabBasedCourse(String course)
+  {
+    if(course.equals("CSE230"))
+    {
+      System.out.println("It is not a lab based course!");
+    }
+    else
+    {
+      this.course[count] = course;
+      count++;
+    }
+  }
+  public static void details()
+  {
+    System.out.println("Total CSE Students: "+total);
+    System.out.println("Available Lab Based Courses:");
+    System.out.println("CSE110 CSE111 CSE220 CSE221");
+  }
+}

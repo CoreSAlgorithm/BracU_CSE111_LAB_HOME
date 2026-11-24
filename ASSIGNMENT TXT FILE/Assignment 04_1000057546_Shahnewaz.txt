@@ -1,0 +1,309 @@
+///////////TASK-1///////////
+
+public class Triangle
+{
+  public int a = 0;
+  public int b = 0;
+  public int c = 0;
+  public int perimeter = 0;
+  public Triangle(int a,int b,int c)
+  {
+    this.a = a;
+    this.b = b;
+    this.c = c;
+    this.perimeter = (a+b+c);
+  }
+  public void triangleDetails()
+  {
+    System.out.println("Three sides of the triangle are: "+a+", "+b+", "+c);
+    System.out.println("Perimeter: "+this.perimeter);
+  }
+  public String printTriangleType()
+  {
+    if(this.a == this.b && this.b == this.c)
+    {
+      return "This is an Equilateral Triangle.";
+    }
+    else if(this.a != this.b && this.b != this.c && this.c != this.a)
+    {
+      return "This is an Scalene Triangle.";
+    }
+    else
+    {
+      return "This is an Isosceles Triangle.";
+    }
+  }
+  public void compareTriangles(Triangle t)
+  {
+    if (this == t)
+    {
+        System.out.println("These two triangle objects have the same address.");
+    }
+    else if (this.a == t.a && this.b == t.b && this.c == t.c)
+    {
+        System.out.println("Addresses are different but the sides of the triangles are equal.");
+    }
+    else if (this.a != t.a && this.b != t.b && this.c != t.c ||
+             this.a == t.a && this.b != t.b && this.c != t.c ||
+             this.a != t.a && this.b == t.b && this.c != t.c ||
+             this.a != t.a && this.b != t.b && this.c == t.c && this.perimeter != t.perimeter)
+    {
+        System.out.println("Addresses, length of the sides and perimeter all are different.");
+    }
+    else if (this.perimeter == t.perimeter)
+    {
+        System.out.println("Only the perimeter of both triangles is equal.");
+    }
+  }
+}
+
+///////////TASK-2///////////
+
+public class Player
+{
+  public String name = "";
+  public int hp = 100;  
+  public String enemy = "";
+  public String[] defeated = new String[5];
+  public int count = 0;
+  public Player(String name, int hp)
+  {
+    this.name = name;
+    this.hp = hp;
+    System.out.println(this.name+" joined the game");
+    System.out.println("Hp: "+this.hp);
+  }
+  public Player(String name)
+  {
+    this.name = name;
+    System.out.println(this.name+" joined the game");
+    System.out.println("Hp: "+this.hp);
+  }
+  public void viewInfo()
+  {
+    System.out.println("Player name: "+this.name);
+    System.out.println("Current Hp: "+this.hp);
+    System.out.println("Defeated");
+    for(int i=0; count>i; i++)
+    {
+      System.out.print(this.defeated[i]+", ");
+    }
+    System.out.print("\n ");
+  }
+  public void defeatVillain(String enemy, int hp)
+  {
+    this.enemy = enemy;
+    if(this.hp < hp)
+    {
+      System.out.println("failed to defeat "+this.enemy);
+    }
+    else if(this.hp == hp)
+    {
+      this.defeated[count] = enemy;
+      this.hp += hp;
+      System.out.println("Defeated "+this.enemy);
+      count++;
+    }
+  }
+  public void defeatVillain(int a, String enemy, int hp)
+  {
+    this.hp = (a*this.hp);
+    System.out.println("HP with "+a+"x boost: "+this.hp);
+    if(this.hp > hp)
+    {
+      this.enemy = enemy;
+      this.defeated[count] = enemy;
+      this.hp += hp;
+      System.out.println("Defeated "+this.enemy);
+      count++;
+    }
+  }
+  public void defeatVillain(Player p)
+  {
+    if(this.hp > p.hp)
+    {     
+      this.defeated[count] = p.name;
+      this.hp += p.hp;
+      System.out.println("Defeated "+p.name);
+      count++;
+    }
+    else if(this.hp < p.hp)
+    {
+      System.out.println("failed to defeat "+p.name);
+    }
+  }
+}
+
+///////////TASK-3///////////
+
+----STUDENT CLASS----
+
+public class Student
+{
+  public String name = "";
+  public int id = 00000000;
+  public String department = "";
+  public String email = null;
+  public String pass = "";
+  public boolean password = false;
+  public int count = 0;
+  public Student(String name, int id, String department)
+  {
+    this.name = name;
+    this.id = id;
+    this.department = department;
+    System.out.println("Student object is created");
+  }
+  public void setPassword(String pass)
+  {
+    this.pass = pass;
+    this.password = true;
+  }
+}
+
+----CONNECT CLASS----
+
+public class Connect
+{
+  public Student stname ; 
+  private boolean login = false;
+  private String pass = "";
+  public String[][] course = new String[5][3];
+  public Student[] advisees = new Student[5];
+  public int advisecount = 0;
+  public Connect()
+  {
+    System.out.println("Connect is ready to use!");
+  }
+  public void login(Student name)
+  {
+    this.stname = name;
+    if(name.email == null && name.password == false)
+    {
+      System.out.println("Email and password need to be set.");
+    }
+    else
+    {
+      System.out.println("Login successful");
+      this.login = true;
+    }
+  }
+  public void advising(Student name)
+  {
+    if(this.login == false)
+    {
+      System.out.println("Please login to advise courses!");
+    }
+    else if(name.count == 0)
+    {
+      System.out.println("You haven't selected any courses.");
+    }
+  }
+  public void advising(Student name, String course1, String course2, String course3, String course4)
+  {
+    if(this.login == false)
+    {
+      System.out.println("Please login to advise courses!");
+    }
+    else
+    {
+      System.out.println("You need special approval to take more than 3 courses.");
+    }
+  }
+  public void advising(Student name, String course1, String course2, String course3)
+  {
+    if (this.login == false)
+    {
+      System.out.println("Please login to advise courses!");
+    }
+    else
+    {
+      advisees[advisecount] = name;
+      course[advisecount][0] = course1;
+      course[advisecount][1] = course2;
+      course[advisecount][2] = course3;
+      advisecount++;
+      System.out.println("Advising successful!");
+    }
+  }
+  public void allAdviseeInfo()
+  {
+    System.out.println("Total Advisee: " + advisecount);
+    for (int i = 0; i < advisecount; i++)
+    {
+      System.out.println("Name: " + advisees[i].name + " ID: " + advisees[i].id);
+      System.out.println("Department: " + advisees[i].department);
+      System.out.println("Advised Courses:");
+      for (int j = 0; j < 3; j++)         
+      {
+        System.out.print(course[i][j] + " ");
+      }
+     System.out.println();
+     System.out.println("==============");
+    }
+  }
+}
+
+/////////////TASK-4/////////////
+
+------SPACESHIP CLASS------
+
+public class Spaceship
+{
+  public String name = "";
+  public int totalCapacity = 0;  
+  public int capacity = 0;
+  public String[] metarial = new String[100];
+  public int count = 0;
+  public Spaceship(String name, int totalCapacity)
+  {
+    this.name = name;
+    this.totalCapacity = totalCapacity;
+  }
+  public void loadCargo(Cargo metarial)  
+  {  
+    this.capacity += metarial.getWeight();
+    if(this.totalCapacity >= capacity)
+    {
+      this.metarial[count] = metarial.getName();
+      count++;
+    }
+    else
+    {
+      System.out.println("Warning: Unable to load "+metarial.getName()+" inside "+this.name+". Exceeds capacity by "+(this.capacity-this.totalCapacity)+" .");
+    }
+  }
+  public void displayDetails()
+  {
+    System.out.println("Spaceship Name: "+this.name);
+    System.out.println("Capacity: "+this.totalCapacity);
+    System.out.println("Current cargo weight :"+this.capacity);
+    System.out.print("Cargo: ");
+    for(int i=0; i<count; i++)
+    {
+      System.out.print(this.metarial[i]+" ");
+    }
+    System.out.println();
+  }
+}
+
+------CARGO CLASS-----
+
+public class Cargo
+{
+  private String name = "";
+  private int weight = 0;
+  public Cargo(String name, int weight)
+  {
+    this.name = name;
+    this.weight = weight;
+  }
+  public String getName()
+  {
+    return this.name;
+  }
+  public int getWeight()
+  {
+    return this.weight;
+  }
+}
