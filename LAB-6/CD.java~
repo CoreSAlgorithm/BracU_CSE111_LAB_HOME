@@ -1,0 +1,19 @@
+public class CD extends Product
+{
+  public String band = "";
+  public String genre = "";
+  public int duration = 0;
+  public Book(int id, String title, int price, int band,int duration, String genre)
+  {
+    super(0);
+    super.Product(id,title,price);
+    this.band = band;
+    this.genre = genre;
+    this.duration = duration;
+  }
+  punlic String printDetail()
+  {
+    return super.getIdTitlePrice()+"\n Band: "+band+" Duration:"+duration
+      +"\n Genre: "+genre;
+  }
+}
