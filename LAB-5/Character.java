@@ -1,0 +1,79 @@
+public class Character
+{
+  public String name = "";
+  public static int charecter = 0;
+  public static int kids = 0;
+  public static int teens = 0;
+  public static int adults = 0;
+  public static int id = 0;
+  public String group = "Teen";
+  public int health = 0;
+  public static double total = 0;
+  public static String strong = "";
+  public static int sthealth = 0;
+  public Character(String name, String group, int health)
+  {
+    this.name = name;
+    charecter++;
+    if(group.equals("Kid"))
+    {
+      this.group = group;
+      kids++;
+    }
+    else if(group.equals("Adult"))
+    {
+      this.group = group;
+      adults++;
+    }
+    else if(group.equals("Teen"))
+    {
+      this.group = group;
+      teens++;
+    }
+    this.health = health;
+    total += health;
+    if(sthealth < health)
+    {
+      strong = name;
+      sthealth = health;
+    }
+    Character.id++;
+  }
+  public Character(String name, int health)
+  {
+    this.name = name;
+    charecter++;
+    this.health = health;
+    total += health;
+    teens++;
+    if(sthealth < health)
+    {
+      strong = name;
+      sthealth = health;
+    }
+    ++id;
+  }
+  public void printDetails()
+  {
+    System.out.println("ID: "+id);
+    System.out.println("Name: "+this.name);
+    System.out.println("Group: "+this.group);
+    System.out.println("Health: "+this.health);
+  }
+  public static void printStats()
+  {
+    System.out.println("Total Character: "+charecter);
+    System.out.println("Kids: "+kids);
+    System.out.println("Teens: "+teens);
+    System.out.println("Adult: "+adults);
+    System.out.println("Average Health: "+total/id);
+    if(strong == "")
+    {
+      System.out.println("Strongest Character: None");
+    }
+    else
+    {
+      System.out.println("Strongest Charecter: "+strong+"(Health"+sthealth+")");
+    }
+  }
+}
