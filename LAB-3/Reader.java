@@ -1,0 +1,59 @@
+public class Reader
+{
+  public int capacity = 2;
+  public String name ="New user";
+  public String[] bookName = new String[this.capacity];
+  public int count = 0;
+  public Reader(String name)
+  {
+    this.name = name;
+    System.out.println("A new reader is created!");
+  }
+  public Reader(String name, int capacity)
+  {
+    this.name = name;
+    this.capacity = capacity;
+    this.bookName = new String[this.capacity];
+    System.out.println("A new reader is created!");
+  }
+  public void readerInfo()
+  {
+    System.out.println("Name: "+this.name);
+    System.out.println("Capacity "+this.capacity);
+    System.out.println("Books: ");
+    if(count == 0)
+    {
+      System.out.println("No books added yet.");
+    }
+    else
+    {
+      for(int i=1; i<=count; i++)
+      {
+        System.out.println("Books "+i+": "+this.bookName[i-1]);
+      }
+    }
+  }
+  public void addBook(String bookName)
+  {
+    if(count < capacity)
+    {
+      this.bookName[count] = bookName;
+      count++;
+    }
+    else
+    {
+      System.out.println("No more capacity.");
+    }
+  }
+  public void updateCapacity(int capacity)
+  {
+    String[] temp = new String[capacity];
+    for(int i=0;i<count;i++)
+    {
+      temp[i] = this.bookName[i];
+    }
+    this.bookName = temp;
+    this.capacity = capacity;
+    System.out.println("Capacity has changed to "+this.capacity);
+  }
+}

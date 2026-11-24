@@ -1,0 +1,36 @@
+public class MoneyTracker
+{
+  public String name = "Null";
+  public double balance ;
+  System.out.println("A new tracker has been launched.");
+  public void createTracker(String name)
+  {
+    this.name = name;
+    this.balance = 1.0;
+  }
+  public String info()
+  {
+    return "Name: "+this.name"\nCurrent balance: "+this.balance;
+  }
+  public void income(double balance1)
+  {
+    this.balance += balance1;
+  }
+  public void expense(double balance2)
+  {
+    if(this.balance > balance2)
+    {
+      this.balance -= balance2;
+      System.out.println("Balance updated.");
+    }
+    else
+    {
+      System.out.println("You're broke.");
+    }
+  }
+  public void showHistory()
+  {
+    System.out.println("Last added: "+balance1);
+    System.out.println("Last spent: "+balance2);
+  }
+}
