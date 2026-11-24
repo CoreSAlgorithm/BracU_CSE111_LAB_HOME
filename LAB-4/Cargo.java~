@@ -1,0 +1,18 @@
+public class Cargo
+{
+  private String name = "";
+  private int weight = 0;
+  public Cargo(String name, int weight)
+  {
+    this.name = name;
+    this.weight = weight;
+  }
+  public String get1()
+  {
+    return this.name;
+  }
+  public int get2()
+  {
+    return this.weight;
+  }
+}

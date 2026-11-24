@@ -1,0 +1,37 @@
+public class Spaceship
+{
+  public String name = "";
+  public int totalCapacity = 0;  
+  public int capacity = 0;
+  public String[] metarial = new String[100];
+  public int count = 0;
+  public Spaceship(String name, int totalCapacity)
+  {
+    this.name = name;
+    this.totalCapacity = totalCapacity;
+  }
+  public void loadCargo(Cargo material)  
+  {  
+    this.capacity = metarial(get2);
+    if(this.totalCapacity > capacity)
+    {
+      this.metarial[count] = metarial(get1);
+      count++;
+    }
+    else
+    {
+      System.out.println("Warning: Unable to load "+metarial+" inside "+this.name+" . Exceeds capacity by"+this.capacity+" .");
+    }
+  }
+  public void displayDetails()
+  {
+    System.out.println("Spaceship Name: "+this.name);
+    System.out.println("Capacity: "+this.totalCapacity);
+    System.out.println("Current cargo weight :"+this.capacity);
+    System.out.print("Cargo: ");
+    for(int i=0; i<count; i++)
+    {
+      System.out.print(this.metarial[i]+" ");
+    }
+  }
+}

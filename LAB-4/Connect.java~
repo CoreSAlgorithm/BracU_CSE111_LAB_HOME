@@ -1,0 +1,67 @@
+public class Connect
+{
+  public Student stname ;
+  public String mail = null;
+  public boolean password = false;
+  private boolean login = false;
+  private String pass = "";
+  public String[] course = new String[3]; 
+  public int count = 0;
+  public int advisecount = 0;
+  System.out.println("Connect is ready to use!");
+  public void login(Student name)
+  {
+    if(mail == null && password == false)
+    {
+      System.out.println("Email and password need to be set.");
+    }
+    else
+    {
+      System.out.println("Login successful");
+    }
+  }
+  public void advising(Student name)
+  {
+    if(this.login == false)
+    {
+      System.out.println("Please login to advise courses!");
+    }
+    else if(count == 0)
+    {
+      System.out.println("You haven't selected any courses.");
+    }
+  }
+  public void advising(Student name,String course, String course, String course, String course, String course)
+  {
+    System.out.println("You need special approval to take more than 3 courses.");
+  }
+  public void advising(Student name,String course1, String course2, String course3)  
+  {
+    this.Student = name;
+    this.course[count] = course1;
+    count++;
+    this.course[count] = course2;
+    count++;
+    this.course[count] = course3;
+    count++;
+    System.out.println("Advising successful!");
+    advisecount++;
+  }
+  public void allAdviseeInfo()
+  {
+    System.out.println("Total advisee: "+advisecount);
+    System.out.println("Name: "+stname.name);
+    System.out.println("ID: "+stname.id);
+    System.out.println("Department: "+stname.department);
+    System.out.println("Advised courses:");
+    for(int i=0; i<count; i++)
+    {
+      System.out.print(this.course[i]);
+    }
+  }
+  public void setPassword(String pass)
+  {
+    this.pass = pass;
+    this.pass = true;
+  }
+}
