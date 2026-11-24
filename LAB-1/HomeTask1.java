@@ -1,0 +1,113 @@
+////////TASK-1////////
+
+//import java.util.Scanner;
+//public class HomeTask1
+//{
+//  public static void main(String[]args)
+//  {
+//    Scanner sc = new Scanner(System.in);
+//    int num1 = sc.nextInt();
+//    int num2 = sc.nextInt();
+//    int count = 0;
+//    if(num1 < num2)
+//    {
+//      for(int i=num1+1; i<num2; i++)
+//      {
+//        int divcount = 0;
+//        for(int j=1; j<=i; j++)
+//        {
+//          if(i%j == 0)
+//          {
+//            divcount++;
+//          }
+//        }
+//        if(divcount == 2)
+//        {
+//          count++;
+//        }
+//      }
+//      System.out.print("There are "+count+" prime numbers between "+num1+" and "+num2);
+//    }
+//    else if(num1 > num2)
+//    {
+//      for(int i=num2+1; i<num1; i++)
+//      {
+//        int divcount = 0;
+//        for(int j=1; j<=i; j++)
+//        {
+//          if(i%j == 0)
+//          {
+//            divcount++;
+//          }
+//        }
+//        if(divcount == 2)
+//        {
+//          count++;
+//        }
+//      }
+//      System.out.print("There are "+count+" prime numbers between "+num2+" and."+num1);
+//    }
+//  }
+//}
+
+////////TASK-2////////
+
+//import java.util.Scanner;
+//public class HomeTask1
+//{
+//  public static void main(String[]args)
+//  {
+//    Scanner sc = new Scanner(System.in);
+//    String s1 = sc.nextLine();
+//    for(int i=0; i<s1.length(); i++)
+//    {
+//      char ch1 = s1.charAt(i);
+//      if(ch1 == 'a')
+//      {
+//        System.out.print('z');
+//        continue;
+//      }
+//      int num = (int)s1.charAt(i);
+//      int editednum = num-1;
+//      char ch = (char)editednum;
+//      System.out.print(ch);
+//    }
+//  }
+//}
+
+////////TASK-3////////
+//
+//import java.util.Scanner;
+//public class HomeTask1
+//{
+//  public static void main(String[]args)
+//  {
+//    Scanner sc = new Scanner(System.in);
+//    System.out.print("N=");
+//    int n = sc.nextInt();
+//    int[] arr = new int[n];
+//    int[] arr2 = new int[n];
+//    for(int i=0; i<n; i++)
+//    {
+//      int num = sc.nextInt();
+//      arr[i] = num;
+//    }
+//    for(int i=0; i<arr.length; i++)
+//    {
+//      if(arr2[i] == 1)
+//      {
+//        continue;
+//      }
+//      int count = 1;
+//      for(int j=i+1; j<n; j++)
+//      {
+//        if(arr[i] == arr[j])
+//        {
+//          count++;
+//          arr2[j] = 1;
+//        }
+//      }
+//      System.out.println(arr[i]+"-"+count+" times.");
+//    }
+//  }
+//}

@@ -1,0 +1,51 @@
+////////TASK-1////////
+
+import java.util.Scanner;
+public class HomeTask1
+{
+  public static void main(String[]args)
+  {
+    Scanner sc = new Scanner(System.in);
+    int num1 = sc.nextInt();
+    int num2 = sc.nextInt();
+    int count = 0;
+    if(num1 < num2)
+    {
+      for(int i=num1+1; i<num2; i++)
+      {
+        int divcount = 0;
+        for(int j=1; j<=i; j++)
+        {
+          if(i%j == 0)
+          {
+            divcount++;
+          }
+        }
+        if(divcount == 2)
+        {
+          count++;
+        }
+      }
+      System.out.print("There are "+count+" prime numbers between "+num1+" and "+num2);
+    }
+    else if(num1 > num2)
+    {
+      for(int i=num2+1; i<num1; i++)
+      {
+        int divcount = 0;
+        for(int j=1; j<=i; j++)
+        {
+          if(i%j == 0)
+          {
+            divcount++;
+          }
+        }
+        if(divcount == 2)
+        {
+          count++;
+        }
+      }
+      System.out.print("There are "+count+" prime numbers between "+num2+" and."+num1);
+    }
+  }
+}
