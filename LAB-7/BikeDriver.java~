@@ -1,0 +1,43 @@
+public class BikeDriver extends GenericDriver
+{
+  public static String[] restrictedAreas = new String[3];
+  public int count++;
+  public String profile = null;
+  public BikeDriver(String name, String profile)
+  {
+    super.name = name;
+    this.profile = profile;
+    System.out.println("Welcome to Pathao Driver Panel!");
+    System.out.println(getName()+" has been registered as a Pathao driver!");
+  }
+  public String toString()
+  {
+    if(profile == null)
+    {
+      return (getName()+"'s driver profile is Not Premium");
+    }
+    else
+    {
+      (getName()+"'s driver profile is Premium");
+    }
+  }
+  public static void restrictedAreas(Srting restrictedAreas)
+  {
+    restrictedAreas[count] = restrictedAreas;
+    count++;
+  }
+  public void fightRestriction(String[] areas)
+  {
+    for (String restrictedAreas : areas)
+    {
+      if(areas == "Defense Area")
+      {
+        System.out.println(getName()+"cannot enter Defense Area");
+      }
+      else
+      {
+        System.out.println(getName()+"can enter "+areas);
+      }
+    }
+  }
+}

@@ -1,0 +1,59 @@
+public class Car extends Vehicle
+{
+  public String status = "Available";
+  public String[] car = new String[3];
+  public String[] carID = new String[3];
+  public int count1 = 0;
+  public int seat = 0;
+  public int count = 000;
+  public static int totalcar = 0;
+  public Car(String model, int price,int seat)
+  {
+    car[count] = model;
+    super(model, price);
+    this.seat = seat;
+    count++;
+    totalcar++;
+    vehicleId = ("CAR"+count);
+    carID[count] = vehicleId;
+    count1++;
+    System.out.println("Vehicle ID: "+vehicleId+" created");
+  }
+  public void vehicleDetail()
+  {
+    System.out.println("Model: " + model + ", Price: $" + price);
+    System.out.print("Status: ");
+    if(sold)
+    {
+      System.out.print("Sold\n");
+    }
+    else
+    {
+      System.out.print("Available\n");
+    }
+    System.out.print("Type: Regular Car");
+    System.out.print("Seat: "+seat);
+  }
+  public void showAllAvailableCars()
+  {
+    System.out.println("Total Car: "+totalcar);
+    System.out.println("Available car: ");
+    for(int i=0; i<count1; i++)
+    {
+      System.out.println(carID[i]+" : "+car[i]);
+    }
+  }
+  public void markAsSold()
+  {
+    sold = true;
+    status = "sold"
+  }
+  public void showAllCars()
+  {
+    System.out.println("Total Car: "+totalcar);
+    for(int i=0; i<count1; i++)
+    {
+      System.out.println(carID[i]+" : "+car[i]+" - "+car[i].status);
+    }
+  }
+}

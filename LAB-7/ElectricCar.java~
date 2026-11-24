@@ -1,0 +1,30 @@
+public class ElectricCar extends Vehicle
+{
+  public String status = "Available";
+  public int battery = 0;
+  public ElectricCar(String model, int price, int battery)
+  {
+    super(model,price);
+    this.battery = battery;
+  }
+  public void vehicleDetail()
+  {
+    System.out.println("Model: " + model + ", Price: $" + price);
+    System.out.print("Status: ");
+    if(sold)
+    {
+      System.out.print("Sold\n");
+    }
+    else
+    {
+      System.out.print("Available\n");
+    }
+    System.out.print("Type: Electric Car");
+    System.out.print("Battery capacity: "+battery);
+  }
+  public void markAsSold()
+  {
+    sold = true;
+    status = "sold"
+  }
+}

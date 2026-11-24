@@ -1,0 +1,36 @@
+public class CarDriver extends GenericDriver
+{
+  public String profile = null;
+  public CarDriver(String name)
+  {
+    super.name = name;
+    this.profile = "Premium"
+    System.out.println("Welcome to Pathao Driver Panel!");
+    System.out.println(getName()+" has been registered as a Pathao driver!");
+  }
+  public String toString()
+  {
+    if(profile == null)
+    {
+      return (getName()+"'s driver profile is Not Premium");
+    }
+    else
+    {
+      (getName()+"'s driver profile is Premium");
+    }
+  }
+  public void fightRestriction(String[] areas)
+  {
+    for (String restrictedAreas : areas)
+    {
+      if(areas == "Road 27")
+      {
+        System.out.println(getName()+"cannot enter Road 27");
+      }
+      else
+      {
+        System.out.println(getName()+"can enter "+areas);
+      }
+    }
+  }
+}
